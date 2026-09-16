@@ -1,4 +1,4 @@
-"""Validate the teaching scaffold; --release also rejects unresolved placeholders."""
+"""Check the workshop pages exist, link correctly, and (with --release) have no placeholders left."""
 import argparse
 import json
 from pathlib import Path
@@ -7,31 +7,35 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 
+PAGES = ['README.md', 'START-HERE.md', 'HOST.md', 'PRESENTATION.md', 'EXAMPLES.md',
+         'setup.md', 'workshop.json', 'starter/README.md', 'solution/README.md',
+         'labs/1-run.md', 'labs/2-build.md', 'labs/3-make-it-yours.md']
+
+LABS = ['labs/1-run.md', 'labs/2-build.md', 'labs/3-make-it-yours.md']
+LAB_BLOCKS = ['Your turn', 'Done when', 'Go further', 'Stuck?']
+
 
 def check(release=False):
     errors = []
-    required = ['README.md', 'START-HERE.md', 'AUTHORING.md', 'PRESENTATION.md',
-                'WORKSHEET.md', 'VERIFICATION.md', 'workshop.json', 'setup/README.md',
-                'instructor/README.md', 'instructor/RELEASE-CHECKLIST.md',
-                'resources/EXAMPLE-TOPICS.md', 'resources/TEACHING-PATTERN.md']
-    labs = ['01-understand-and-run', '02-build', '03-test-and-improve', '04-personalize']
-    required += [f'labs/{lab}/README.md' for lab in labs]
-    required += [f'{folder}/README.md' for folder in ['starter', 'solution', 'data', 'tests']]
-    for name in required:
+    for name in PAGES:
         if not (ROOT / name).is_file():
-            errors.append(f'Missing: {name}')
-    config = json.loads((ROOT / 'workshop.json').read_text(encoding='utf-8'))
-    for duration, segments in config['formats'].items():
-        if len(segments) != 7 or sum(segments) != int(duration):
-            errors.append(f'Incorrect schedule: {duration}')
-    for lab in labs:
-        path = ROOT / 'labs' / lab / 'README.md'
-        if not path.exists():
+            errors.append(f'Missing page: {name}')
+
+    config_path = ROOT / 'workshop.json'
+    if config_path.is_file():
+        minutes = json.loads(config_path.read_text(encoding='utf-8'))['minutes']
+        if sum(minutes.values()) != 90:
+            errors.append(f'Schedule totals {sum(minutes.values())} minutes, not 90')
+
+    for lab in LABS:
+        path = ROOT / lab
+        if not path.is_file():
             continue
         content = path.read_text(encoding='utf-8')
-        for heading in ['Goal', 'Before you begin', 'Learn', 'Predict', 'Do', 'Checkpoint', 'Hints', 'Reflect', 'Next']:
-            if f'## {heading}\n' not in content:
-                errors.append(f'{path.relative_to(ROOT)}: missing {heading}')
+        for block in LAB_BLOCKS:
+            if f'## {block}\n' not in content:
+                errors.append(f'{lab}: missing "## {block}" section')
+
     for path in ROOT.rglob('*.md'):
         if any(part in {'.git', '.venv', 'output'} for part in path.parts):
             continue
@@ -42,17 +46,21 @@ def check(release=False):
             target = target.split('#')[0]
             if target and not (path.parent / target).exists():
                 errors.append(f'Broken link: {path.relative_to(ROOT)} -> {target}')
+
     if release:
-        for name in required:
+        # README/PRESENTATION describe the template itself and mention placeholders on purpose.
+        for name in [n for n in PAGES if n not in {'README.md', 'PRESENTATION.md'}]:
             path = ROOT / name
-            if path.exists() and re.search(r'\{\{[^}]+\}\}', path.read_text(encoding='utf-8')):
-                errors.append(f'Unresolved authoring placeholders: {name}')
+            if path.is_file() and re.search(r'\{\{[^}]+\}\}', path.read_text(encoding='utf-8')):
+                errors.append(f'Still has {{{{PLACEHOLDERS}}}}: {name}')
+
     return errors
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--release', action='store_true')
+    parser.add_argument('--release', action='store_true',
+                        help='also fail if any {{PLACEHOLDER}} is unfilled')
     errors = check(parser.parse_args().release)
-    print('\n'.join(errors) if errors else 'PASS: scaffold, schedules, lab structure, and local links')
+    print('\n'.join(errors) if errors else 'PASS: pages, lab structure, schedule, and links')
     sys.exit(bool(errors))

@@ -1,17 +1,22 @@
-# Ten-minute repository walkthrough
+# Present this in 10 minutes
 
-No installation or live cloud job is needed to present this template. Keep the repository open on GitHub.
+Just the repo on screen. Nothing to install. **The one line you repeat three times: "the structure never changes — only the blanks change."**
 
-| Time | Open | Say / show |
+| Time | Open | Say |
 |---|---|---|
-| 0:00–1:00 | [README](README.md) | “One useful project, three or four labs, one to two hours.” |
-| 1:00–2:00 | [START-HERE](START-HERE.md) | “This is the exact page attendees receive. It tells them what to build and where to begin.” |
-| 2:00–4:00 | [Lab 2](labs/02-build/README.md) | Show goal, prediction, editable file, command, checkpoint, hints, next link. |
-| 4:00–5:00 | [Lab 3](labs/03-test-and-improve/README.md) | Explain why participants must test a failure and justify a change. |
-| 5:00–6:00 | [Instructor notes](instructor/README.md) | Show the separate lead path: questions, timeboxes, recovery, answer key. |
-| 6:00–7:00 | [Worksheet](WORKSHEET.md) | Show what learners hand back as evidence. |
-| 7:00–8:00 | [Example topics](resources/EXAMPLE-TOPICS.md) | Contrast a GenieX agent app with an AI Hub image-model workflow. Same teaching structure, different implementation. |
-| 8:00–9:00 | [AUTHORING](AUTHORING.md) + [workshop.json](workshop.json) | “Use this template; fill the topic, code, data, checks, and verified setup.” |
-| 9:00–10:00 | [Release checklist](instructor/RELEASE-CHECKLIST.md) | “A template is not a completed course. We pilot the attendee path before publishing an event.” |
+| 0:00 | — | "Most workshops are 60 minutes of slides and 15 minutes of copy-paste. Nobody leaves having built anything. So we fixed the ratio first, before we picked any topic." |
+| 0:30 | [README](README.md) — the time block | "90 minutes. 70 of them are attendees typing. Five-minute demo, then we get out of the way. Lab 2 alone is 35 minutes of their hands on the keyboard." |
+| 2:00 | [Lab 2](labs/2-build.md) | "Every lab, every workshop, same six blocks: what you'll build → watch → your turn → **done when** → go further → stuck." Point at **Done when**: "nobody ever sits there wondering if they finished." |
+| 3:30 | [EXAMPLES](EXAMPLES.md) — the table | "Five blanks. That is the entire difference between one workshop and the next." |
+| 4:30 | [EXAMPLES](EXAMPLES.md) — GenieX section | Walk the three labs. Lab 1: unplug the network, it still answers. Lab 2: one TODO — give the agent a tool. Lab 3: their own notes, and they decide what the agent may do unasked. |
+| 7:00 | [START-HERE](START-HERE.md) | "This is the only link an attendee ever gets. Nobody hunts through a repo." |
+| 8:00 | [HOST](HOST.md) | "Minute-by-minute run of show, four questions that carry the room, and a table for when setup breaks — because it will." |
+| 9:00 | `--release` check | "Fill the blanks, run the checker, it refuses to pass until every one is real and tested." |
 
-Closing request: ask each teammate to propose one recognizable use case, one learner decision, and one test. Assign an owner and a pilot date, not just a topic title.
+**The ask (don't skip this):** each person names one topic, the one thing attendees build with their own hands, and a pilot date. Owner and date — not just a title.
+
+## Two questions you will get
+
+**"Is 90 minutes enough to teach GenieX?"** — We're not teaching GenieX. We're getting one working thing onto their laptop and showing them where to look next. Coverage is what docs are for.
+
+**"What if setup breaks on the day?"** — Setup is prework with a readiness command, and [HOST.md](HOST.md) has the fallback table. One person broken: pair them. Many broken: switch to the prepared fallback. We never debug installs live.
