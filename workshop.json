@@ -1,18 +1,13 @@
 {
-  "title": "Qualcomm AI Topic",
+  "title": "{{WORKSHOP_TITLE}}",
   "technology": "{{QUALCOMM_TECHNOLOGY}}",
-  "build_outcome": "{{ONE_SENTENCE_USEFUL_APPLICATION}}",
-  "audience": "{{AUDIENCE_AND_ASSUMED_SKILLS}}",
+  "they_build": "{{ONE_SENTENCE_USEFUL_APPLICATION}}",
+  "audience": "{{WHO_ITS_FOR_AND_WHAT_THEY_ALREADY_KNOW}}",
   "hardware": "{{SUPPORTED_HARDWARE_AND_FALLBACK}}",
-  "software_versions": "{{TESTED_VERSIONS}}",
-  "setup_command": "{{REAL_SETUP_COMMAND}}",
-  "run_command": "{{REAL_RUN_COMMAND}}",
-  "check_command": "{{REAL_CHECK_COMMAND}}",
-  "owner": "{{WORKSHOP_OWNER}}",
-  "verified_on": "{{DATE_DEVICE_AND_SCOPE}}",
-  "formats": {
-    "60": [5, 10, 20, 0, 15, 0, 10],
-    "90": [5, 15, 25, 0, 20, 15, 10],
-    "120": [10, 20, 35, 5, 25, 15, 10]
-  }
+  "setup_command": "{{SETUP_COMMAND}}",
+  "run_command": "{{RUN_COMMAND}}",
+  "check_command": "{{BUILD_CHECK_COMMAND}}",
+  "host": "{{HOST_NAME_AND_CONTACT}}",
+  "tested_on": "{{DATE_DEVICE_AND_WHAT_YOU_ACTUALLY_RAN}}",
+  "minutes": { "welcome": 5, "lab1": 15, "lab2": 35, "lab3": 25, "demos": 10 }
 }

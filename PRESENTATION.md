@@ -1,17 +1,16 @@
-# Ten-minute repository walkthrough
+# Present this in 10 minutes
 
-No installation or live cloud job is needed to present this template. Keep the repository open on GitHub.
+Just the repo on screen. Nothing to install.
 
-| Time | Open | Say / show |
+| Time | Open | Say |
 |---|---|---|
-| 0:00–1:00 | [README](README.md) | “One useful project, three or four labs, one to two hours.” |
-| 1:00–2:00 | [START-HERE](START-HERE.md) | “This is the exact page attendees receive. It tells them what to build and where to begin.” |
-| 2:00–4:00 | [Lab 2](labs/02-build/README.md) | Show goal, prediction, editable file, command, checkpoint, hints, next link. |
-| 4:00–5:00 | [Lab 3](labs/03-test-and-improve/README.md) | Explain why participants must test a failure and justify a change. |
-| 5:00–6:00 | [Instructor notes](instructor/README.md) | Show the separate lead path: questions, timeboxes, recovery, answer key. |
-| 6:00–7:00 | [Worksheet](WORKSHEET.md) | Show what learners hand back as evidence. |
-| 7:00–8:00 | [Example topics](resources/EXAMPLE-TOPICS.md) | Contrast a GenieX agent app with an AI Hub image-model workflow. Same teaching structure, different implementation. |
-| 8:00–9:00 | [AUTHORING](AUTHORING.md) + [workshop.json](workshop.json) | “Use this template; fill the topic, code, data, checks, and verified setup.” |
-| 9:00–10:00 | [Release checklist](instructor/RELEASE-CHECKLIST.md) | “A template is not a completed course. We pilot the attendee path before publishing an event.” |
+| 0:00 | [README](README.md) | "Six pages. 90 minutes. 70 of those minutes are attendees typing, not us talking." |
+| 1:00 | [README](README.md) — the time block | "Five minutes of demo, then they build. Lab 2 alone is 35 minutes of their hands on the keyboard." |
+| 2:00 | [START-HERE](START-HERE.md) | "This is the only link an attendee gets. What you're building, setup, three labs, done." |
+| 3:00 | [Lab 2](labs/2-build.md) | "Every lab has the same six blocks: build → watch → your turn → done when → go further → stuck. Nobody ever wonders if they finished." Point at **Done when**. |
+| 5:00 | [Lab 3](labs/3-make-it-yours.md) | "This is why people remember the workshop. 25 minutes on their own use case, their own data." |
+| 6:30 | [HOST](HOST.md) | "Minute-by-minute run of show, four questions that carry the room, and a table for when setup breaks." |
+| 8:00 | [EXAMPLES](EXAMPLES.md) | "Same structure, two different technologies — GenieX agent, or AI Hub on device." |
+| 9:00 | [setup.md](setup.md) + `--release` check | "Fill the blanks, run the checker, it fails until every placeholder is real." |
 
-Closing request: ask each teammate to propose one recognizable use case, one learner decision, and one test. Assign an owner and a pilot date, not just a topic title.
+**Ask for at the end:** each person names one topic, one thing attendees will build with their own hands, and a pilot date. Owner + date, not just a title.
