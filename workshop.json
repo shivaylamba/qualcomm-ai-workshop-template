@@ -1,0 +1,18 @@
+{
+  "title": "Qualcomm AI Topic",
+  "technology": "{{QUALCOMM_TECHNOLOGY}}",
+  "build_outcome": "{{ONE_SENTENCE_USEFUL_APPLICATION}}",
+  "audience": "{{AUDIENCE_AND_ASSUMED_SKILLS}}",
+  "hardware": "{{SUPPORTED_HARDWARE_AND_FALLBACK}}",
+  "software_versions": "{{TESTED_VERSIONS}}",
+  "setup_command": "{{REAL_SETUP_COMMAND}}",
+  "run_command": "{{REAL_RUN_COMMAND}}",
+  "check_command": "{{REAL_CHECK_COMMAND}}",
+  "owner": "{{WORKSHOP_OWNER}}",
+  "verified_on": "{{DATE_DEVICE_AND_SCOPE}}",
+  "formats": {
+    "60": [5, 10, 20, 0, 15, 0, 10],
+    "90": [5, 15, 25, 0, 20, 15, 10],
+    "120": [10, 20, 35, 5, 25, 15, 10]
+  }
+}
