@@ -38,10 +38,13 @@ Attendees never have to guess what to do next or whether they finished.
 
 ## Make it yours
 
-1. Fill in [workshop.json](workshop.json).
-2. Put a half-finished app in `starter/` and the finished one in `solution/`.
-3. Replace every `{{PLACEHOLDER}}` in the 6 pages. Real commands, real expected output.
-4. Check it: `python scripts/check_template.py` (structure + links), `python scripts/check_template.py --release` (fails while placeholders remain).
-5. Have one person who has never seen it follow START-HERE.md end to end. Fix what confused them.
+Read **[BUILD-YOUR-OWN.md](BUILD-YOUR-OWN.md)** — the whole process, in the order you actually do it. The short version:
+
+1. Answer five questions on paper: what they build, the first result, the one thing they implement, how they personalize it, the judgement call they make.
+2. Write the finished app in `solution/`. Cut one function out of it into `starter/` — that hole is Lab 2.
+3. Fill in the pages and replace every `{{PLACEHOLDER}}`, then run `python scripts/check_template.py --release`.
+4. Do a timed dry run on a clean machine, then hand the START-HERE link to one person who has never seen it and say nothing.
+
+Don't change the six blocks in a lab, the 90-minute shape, or the "Done when" line — that's the part every workshop shares. Everything else is yours.
 
 The checker validates pages and links only — it does not run any SDK. Test your own commands on the real device before you deliver.
