@@ -13,6 +13,8 @@ Just the repo on screen. Nothing to install. **The one line you repeat three tim
 | 8:00 | [HOST](HOST.md) | "Minute-by-minute run of show, four questions that carry the room, and a table for when setup breaks — because it will." |
 | 9:00 | `--release` check | "Fill the blanks, run the checker, it refuses to pass until every one is real and tested." |
 
+Anyone building one: **[BUILD-YOUR-OWN.md](BUILD-YOUR-OWN.md)** is the day-of-work guide — five questions on paper, build the solution, cut one hole in it, pilot it on one person.
+
 **The ask (don't skip this):** each person names one topic, the one thing attendees build with their own hands, and a pilot date. Owner and date — not just a title.
 
 ## Two questions you will get
