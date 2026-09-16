@@ -7,7 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 
-PAGES = ['README.md', 'START-HERE.md', 'HOST.md', 'BUILD-YOUR-OWN.md', 'PRESENTATION.md', 'EXAMPLES.md',
+PAGES = ['README.md', 'START-HERE.md', 'HOST.md', 'PRESENTATION.md', 'EXAMPLES.md',
          'setup.md', 'workshop.json', 'starter/README.md', 'solution/README.md',
          'labs/1-run.md', 'labs/2-build.md', 'labs/3-make-it-yours.md']
 
@@ -49,7 +49,7 @@ def check(release=False):
 
     if release:
         # README/PRESENTATION describe the template itself and mention placeholders on purpose.
-        meta = {'README.md', 'PRESENTATION.md', 'BUILD-YOUR-OWN.md'}
+        meta = {'README.md', 'PRESENTATION.md'}
         for name in [n for n in PAGES if n not in meta]:
             path = ROOT / name
             if path.is_file() and re.search(r'\{\{[^}]+\}\}', path.read_text(encoding='utf-8')):

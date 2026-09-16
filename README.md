@@ -36,15 +36,17 @@ Short on time? Drop Lab 3 and you have a 60-minute workshop.
 
 Attendees never have to guess what to do next or whether they finished.
 
-## Make it yours
+## Use it for your topic
 
-Read **[BUILD-YOUR-OWN.md](BUILD-YOUR-OWN.md)** — the whole process, in the order you actually do it. The short version:
+Copy this repo. Don't redesign anything — fill in the blanks.
 
-1. Answer five questions on paper: what they build, the first result, the one thing they implement, how they personalize it, the judgement call they make.
-2. Write the finished app in `solution/`. Cut one function out of it into `starter/` — that hole is Lab 2.
-3. Fill in the pages and replace every `{{PLACEHOLDER}}`, then run `python scripts/check_template.py --release`.
-4. Do a timed dry run on a clean machine, then hand the START-HERE link to one person who has never seen it and say nothing.
+1. **Pick your topic** and write one sentence: what attendees build in 90 minutes.
+2. **Add the code.** Finished app in `solution/`, same app with one function removed in `starter/`. That missing function is Lab 2.
+3. **Replace every `{{PLACEHOLDER}}`** in the 6 pages with real, tested commands.
+4. **Check it:** `python scripts/check_template.py --release` — it fails until every blank is filled.
 
-Don't change the six blocks in a lab, the 90-minute shape, or the "Done when" line — that's the part every workshop shares. Everything else is yours.
+The 90-minute shape, the six blocks in every lab, and the "Done when" line stay exactly as they are. That's what makes every workshop feel the same.
+
+See [EXAMPLES.md](EXAMPLES.md) for the same template filled in for GenieX and AI Hub.
 
 The checker validates pages and links only — it does not run any SDK. Test your own commands on the real device before you deliver.
